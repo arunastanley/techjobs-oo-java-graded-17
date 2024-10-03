@@ -98,24 +98,22 @@ public class Job {
 
     @Override
     public String toString() {
+
+        // Task5: 4. (Optional) If a Job object ONLY contains data for the id field,
+
+        if(name == null && employer == null && location == null && positionType == null && coreCompetency == null) {
+            return "OOPS! This job does not seem to exist";
+        }
+
+
+
         String dispName = name;
         String dispEmployer = employer.getValue();
         String dispLocation = location.getValue();
         String dispPositionType= positionType.getValue();
         String dispCoreCompetancy = coreCompetency.getValue();
 
-//        if(name.isEmpty()){
-//            dispName = "Data not available";
-//        }if(employer.getValue() == null) {
-//            dispEmployer = "Data not available";
-//        }if(location.getValue() == null) {
-//            dispLocation = "Data not available";
-//        }if(positionType.getValue()  == null) {
-//            dispPositionType = "Data not available";
-//        }if(coreCompetency.getValue() == null) {
-//            dispCoreCompetancy = "Data not available";
-//        }
-
+// Task5: 3
         if(name.isEmpty()){
             dispName = "Data not available";
         }if(employer.getValue().isEmpty()) {
@@ -128,6 +126,7 @@ public class Job {
             dispCoreCompetancy = "Data not available";
         }
 
+// Task5: 1 & 2
         return System.lineSeparator() +
                 "ID: " + id +  System.lineSeparator()+
                 "Name: " + dispName  + System.lineSeparator()+

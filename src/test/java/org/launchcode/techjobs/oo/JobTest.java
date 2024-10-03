@@ -93,4 +93,10 @@ public class JobTest {
 
 
     }
+
+    @Test
+    public void testToCheckJobWithJustID(){
+        Job emptyJob = new Job();
+        assertTrue(emptyJob.toString().contains("OOPS! This job does not seem to exist"));
+    }
 }
