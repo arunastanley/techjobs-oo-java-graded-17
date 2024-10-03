@@ -95,4 +95,46 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    @Override
+    public String toString() {
+        String dispName = name;
+        String dispEmployer = employer.getValue();
+        String dispLocation = location.getValue();
+        String dispPositionType= positionType.getValue();
+        String dispCoreCompetancy = coreCompetency.getValue();
+
+//        if(name.isEmpty()){
+//            dispName = "Data not available";
+//        }if(employer.getValue() == null) {
+//            dispEmployer = "Data not available";
+//        }if(location.getValue() == null) {
+//            dispLocation = "Data not available";
+//        }if(positionType.getValue()  == null) {
+//            dispPositionType = "Data not available";
+//        }if(coreCompetency.getValue() == null) {
+//            dispCoreCompetancy = "Data not available";
+//        }
+
+        if(name.isEmpty()){
+            dispName = "Data not available";
+        }if(employer.getValue().isEmpty()) {
+            dispEmployer = "Data not available";
+        }if(location.getValue().isEmpty()) {
+            dispLocation = "Data not available";
+        }if(positionType.getValue().isEmpty()) {
+            dispPositionType = "Data not available";
+        }if(coreCompetency.getValue().isEmpty()) {
+            dispCoreCompetancy = "Data not available";
+        }
+
+        return System.lineSeparator() +
+                "ID: " + id +  System.lineSeparator()+
+                "Name: " + dispName  + System.lineSeparator()+
+                "Employer: " + dispEmployer + System.lineSeparator()+
+                "Location: " + dispLocation + System.lineSeparator()+
+                "Position Type: " + dispPositionType + System.lineSeparator()+
+                "Core Competency: " + dispCoreCompetancy +
+                System.lineSeparator();
+    }
 }
